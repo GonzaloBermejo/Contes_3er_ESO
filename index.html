@@ -1,199 +1,225 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecte de 3er d'ESO : La Sostenibilitat a través dels contes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projecte de 3er d'ESO : La Sostenibilitat a través dels contes</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
 
-        /* Header amb imatges als extrems i nav centrat */
-        header {
-            background-color: #2c3e50;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px; /* més alt per donar espai a les imatges */
-        }
+    /* Header amb imatges als extrems i nav centrat */
+    header {
+        background-color: #2c3e50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
 
-        header img {
-            height: 70px; /* ajust automàtic de la imatge segons el header */
-            object-fit: contain;
-        }
+    header img {
+        height: 70px;
+        object-fit: contain;
+    }
 
-        nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
 
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+    nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
 
-        nav a:hover {
-            background-color: #34495e;
-        }
+    nav a:hover {
+        background-color: #34495e;
+    }
 
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-            color: #2c3e50;
-        }
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #2c3e50;
+    }
 
-        section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
+    section {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+    }
 
-        .class-section {
-            margin-bottom: 40px;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .class-section, .year-button {
+        margin-bottom: 40px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .group {
-            margin-left: 20px;
-            margin-top: 10px;
-            display: none; /* Inicialment ocult */
-        }
+    .group {
+        margin-left: 20px;
+        margin-top: 10px;
+        display: none;
+    }
 
-        .group h3 {
-            margin: 5px 0;
-        }
+    .group h3 {
+        margin: 5px 0;
+    }
 
-        .clickable {
-            cursor: pointer;
-            color: #2980b9;
-        }
+    .clickable {
+        cursor: pointer;
+        color: #2980b9;
+    }
 
-        .clickable:hover {
-            text-decoration: underline;
-        }
+    .clickable:hover {
+        text-decoration: underline;
+    }
 
-        .external-link {
-            display: block;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #dff0d8;
-            border-left: 5px solid #27ae60;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    .external-link {
+        display: block;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #dff0d8;
+        border-left: 5px solid #27ae60;
+        border-radius: 5px;
+        font-size: 16px;
+    }
 
-        .external-link a {
-            color: #27ae60;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .external-link a {
+        color: #27ae60;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-        .external-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .external-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* Botón desplegable años anteriores */
+    .year-button {
+        cursor: pointer;
+        color: #2980b9;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .year-button:hover {
+        text-decoration: underline;
+    }
+
+    .year-groups {
+        margin-left: 20px;
+        margin-top: 10px;
+        display: none;
+    }
+
+    .year-groups a {
+        display: block;
+        margin: 5px 0;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .year-groups a:hover {
+        text-decoration: underline;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <!-- Imagen izquierda -->
-        <img src="Franciscanes.png" alt="Franciscanes Logo">
+<header>
+    <img src="Franciscanes.png" alt="Franciscanes Logo">
+    <nav>
+        <a href="#classe-a">Curs de 3er d'ESO (Escola Franciscanes del Poble Nou)</a>
+    </nav>
+    <img src="Franciscanes.png" alt="Franciscanes Logo">
+</header>
 
-        <!-- Navegación centrada -->
-        <nav>
-            <a href="#classe-a">Curs de 3er d'ESO (Escola Franciscanes del Poble Nou)</a>
-        </nav>
+<h1>La sostenibilitat feta conte : com apropar l'ecologia als nens petits </h1>
 
-        <!-- Imagen derecha -->
-        <img src="Franciscanes.png" alt="Franciscanes Logo">
-    </header>
+<div class="external-link">
+    L’alumnat de 3r d’ESO de l’Escola Franciscanes de Poblenou ha investigat l’impacte dels residus que es generen a l’escola, i després ha creat i explicat contes a classes d’infantil i primària per transmetre les seves troballes.: 
+    <a href="https://www.barcelona.cat/barcelonasostenible/ca/centres-educatius/actualitat-descoles-sostenibles/on-van-a-parar-els-embolcalls-dels-esmorzars-aquests-contes-us-ajuden-a-explicarho-als-mes-petits-1547221?utm_content=C6769-I185&utm_source=ecoms&utm_medium=email&utm_term=Noticia%20doble-contingut" target="_blank">Notícia completa</a>.
+</div>
 
-    <h1>La sostenibilitat feta conte : com apropar l'ecologia als nens petits </h1>
+<!-- Botón Contes d'anys anteriors -->
+<div class="year-button clickable" onclick="toggleGroups('previousYears')">
+    Contes d'anys anteriors
+</div>
 
-    <!-- Enlace externo con explicación -->
-    <div class="external-link">
-        L’alumnat de 3r d’ESO de l’Escola Franciscanes de Poblenou ha investigat l’impacte dels residus que es generen a l’escola, i després ha creat i explicat contes a classes d’infantil i primària per transmetre les seves troballes.: 
-        <a href="https://www.barcelona.cat/barcelonasostenible/ca/centres-educatius/actualitat-descoles-sostenibles/on-van-a-parar-els-embolcalls-dels-esmorzars-aquests-contes-us-ajuden-a-explicarho-als-mes-petits-1547221?utm_content=C6769-I185&utm_source=ecoms&utm_medium=email&utm_term=Noticia%20doble-contingut" target="_blank">Notícia completa</a>.
+<div id="previousYears" class="year-groups">
+    <!-- Classe A 2024-2025 -->
+    <div class="year-button clickable" onclick="toggleGroups('classeA2024')">Classe A 2024-2025</div>
+    <div id="classeA2024" class="year-groups">
+        <a href="#">Els 2 Mons.pdf</a>
+        <a href="#">Els pingüins i el monstruo.pdf</a>
+        <a href="#">La gran missió de reciclarte al mar.pdf</a>
+        <a href="#">Reciclar és millor que contaminar.pdf</a>
+        <a href="#">Will i la salvació del món.pdf</a>
+        <a href="#">CamScanner 11-03-2025 16.07.pdf</a>
     </div>
 
-    <!-- Classe A -->
-    <section id="classe-a" class="class-section">
-        <h2 class="clickable" onclick="toggleGroups('groupsA')">Classe A</h2>
-        <div id="groupsA" class="group">
-            <h3>Grup 1:</h3>
-            <p></p>
+    <!-- Classe B 2024-2025 -->
+    <div class="year-button clickable" onclick="toggleGroups('classeB2024')">Classe B 2024-2025</div>
+    <div id="classeB2024" class="year-groups">
+        <a href="#">Els 2 Mons.pdf</a>
+        <a href="#">Els pingüins i el monstruo.pdf</a>
+        <a href="#">La gran missió de reciclarte al mar.pdf</a>
+        <a href="#">Reciclar és millor que contaminar.pdf</a>
+        <a href="#">Will i la salvació del món.pdf</a>
+        <a href="#">CamScanner 11-03-2025 16.07.pdf</a>
+    </div>
+</div>
 
-            <h3>Grup 2:</h3>
-            <p></p>
+<!-- Classe A -->
+<section id="classe-a" class="class-section">
+    <h2 class="clickable" onclick="toggleGroups('groupsA')">Classe A</h2>
+    <div id="groupsA" class="group">
+        <h3>Grup 1:</h3><p></p>
+        <h3>Grup 2:</h3><p></p>
+        <h3>Grup 3:</h3><p></p>
+        <h3>Grup 4:</h3><p></p>
+        <h3>Grup 5:</h3><p></p>
+        <h3>Grup 6:</h3><p></p>
+        <h3>Grup 7:</h3><p></p>
+    </div>
+</section>
 
-            <h3>Grup 3:</h3>
-            <p></p>
+<!-- Classe B -->
+<section id="classe-b" class="class-section">
+    <h2 class="clickable" onclick="toggleGroups('groupsB')">Classe B</h2>
+    <div id="groupsB" class="group">
+        <h3>Grup 1:</h3><p>Hugo, Carlos, Lucas, Pol</p>
+        <h3>Grup 2:</h3><p>Ivet, Georgia, Jana, Laia, María</p>
+        <h3>Grup 3:</h3><p>Yuanyuan, Ada, Adriana, Muha</p>
+        <h3>Grup 4:</h3><p>Chloé, Amélie, Yaneth</p>
+        <h3>Grup 5:</h3><p>Abiel, Andrei, Juan, Jinfa</p>
+        <h3>Grup 6:</h3><p>Matvii, Anna, Denís, Martí</p>
+        <h3>Grup 7:</h3><p>Sofía, Zihan, Lily, Eimy</p>
+    </div>
+</section>
 
-            <h3>Grup 4:</h3>
-            <p></p>
-
-            <h3>Grup 5:</h3>
-            <p></p>
-
-            <h3>Grup 6:</h3>
-            <p></p>
-
-            <h3>Grup 7:</h3>
-            <p></p>
-        </div>
-    </section>
-
-    <!-- Classe B -->
-    <section id="classe-b" class="class-section">
-        <h2 class="clickable" onclick="toggleGroups('groupsB')">Classe B</h2>
-        <div id="groupsB" class="group">
-            <h3>Grup 1:</h3>
-            <p>Hugo, Carlos, Lucas, Pol</p>
-
-            <h3>Grup 2:</h3>
-            <p>Ivet, Georgia, Jana, Laia, María</p>
-
-            <h3>Grup 3:</h3>
-            <p>Yuanyuan, Ada, Adriana, Muha</p>
-
-            <h3>Grup 4:</h3>
-            <p>Chloé, Amélie, Yaneth</p>
-
-            <h3>Grup 5:</h3>
-            <p>Abiel, Andrei, Juan, Jinfa</p>
-
-            <h3>Grup 6:</h3>
-            <p>Matvii, Anna, Denís, Martí</p>
-
-            <h3>Grup 7:</h3>
-            <p>Sofía, Zihan, Lily, Eimy</p>
-        </div>
-    </section>
-
-    <script>
-        function toggleGroups(groupId) {
-            const groupsDiv = document.getElementById(groupId);
-            if (groupsDiv.style.display === "none" || groupsDiv.style.display === "") {
-                groupsDiv.style.display = "block";
-            } else {
-                groupsDiv.style.display = "none";
-            }
-        }
-    </script>
+<script>
+function toggleGroups(groupId) {
+    const groupsDiv = document.getElementById(groupId);
+    if (groupsDiv.style.display === "none" || groupsDiv.style.display === "") {
+        groupsDiv.style.display = "block";
+    } else {
+        groupsDiv.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
 
