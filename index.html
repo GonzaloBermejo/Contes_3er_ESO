@@ -225,15 +225,10 @@ function toggleGroups(groupId) {
         groupsDiv.style.display = "none";
     }
 }
-
-// Mejor presentación de icono + PDF + botón de descarga
-document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
-    const pdfUrl = a.href;
-    a.innerHTML = `📄 ${a.textContent} <span style="margin-left:5px;"><a href="${pdfUrl}" download style="text-decoration:none;">⬇️</a></span>`;
-});
 </script>
 </body>
 </html>
+
 
 
 
