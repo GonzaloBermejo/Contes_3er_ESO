@@ -226,14 +226,13 @@ function toggleGroups(groupId) {
     }
 }
 
-// Añadir icono y botón de descarga a todos los PDFs
+// Mejor presentación de icono + PDF + botón de descarga
 document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
-    a.innerHTML = "📄 " + a.textContent;          // Icono delante del nombre
-    a.insertAdjacentHTML('afterend', ` <a href="${a.href}" download>⬇️</a>`); // Botón de descarga
+    const pdfUrl = a.href;
+    a.innerHTML = `📄 ${a.textContent} <span style="margin-left:5px;"><a href="${pdfUrl}" download style="text-decoration:none;">⬇️</a></span>`;
 });
 </script>
-</body>
-</html>
+
 
 
 
