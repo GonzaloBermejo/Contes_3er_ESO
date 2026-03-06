@@ -225,6 +225,12 @@ function toggleGroups(groupId) {
         groupsDiv.style.display = "none";
     }
 }
+
+// Añadir icono y botón de descarga a todos los PDFs
+document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
+    a.innerHTML = "📄 " + a.textContent;          // Icono delante del nombre
+    a.insertAdjacentHTML('afterend', ` <a href="${a.href}" download>⬇️</a>`); // Botón de descarga
+});
 </script>
 </body>
 </html>
